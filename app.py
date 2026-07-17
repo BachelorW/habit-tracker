@@ -1,17 +1,3 @@
-from pyngrok import ngrok, conf
-import getpass
-import sys
-
-# 你的 ngrok authtoken（把下面的 YOUR_TOKEN 换成你刚才在 ngrok 网页复制的那一串）
-conf.get_default().authtoken = "3FrEDIUWFbmyUPcnmATwTULYivG_4u62HwPLE7CxP9AaRT4yu"
-
-# 建立隧道，把本地8501端口变成公网网址
-try:
-    public_url = ngrok.connect(8501, "http")
-    print(f"\n✅ 手机访问链接：{public_url}\n")
-except Exception as e:
-    print(f"ngrok 启动失败：{e}")
-    print("请在手机使用局域网地址或检查 Token。")
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
